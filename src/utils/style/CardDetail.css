@@ -1,0 +1,319 @@
+
+:root{
+    width: 100%;
+    margin: 0px;
+}
+.container-logement{    
+    width: 80%; 
+    margin: auto;
+    margin-top: -80px;
+    padding-top: 0px;
+    margin-bottom: 40px;    
+}
+.container-img > img{
+    border-radius: 25px;
+    height: 415px;
+    width: 100%;
+    object-fit: cover;
+}
+.container_chevron{
+    display: flex;   
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+}
+.chevron-left, .chevron-right{
+    background: none;
+	outline: none;
+	border: none;
+	font-weight: 600;
+	cursor: pointer;
+	align-self: self-start;
+	padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+   top: 253px; 
+}
+.limite-img{
+    color: #fff;
+    font-weight: 500;
+    width: 30px;
+    display: grid;
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    width:auto;
+    height: 20px;
+}
+.count{
+    margin-top: -30px;
+    grid-column: 5 / 8;
+    grid-row: 1;
+}
+.titre-logement{
+    color: #FF6060;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    margin: 50px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.cont-titre-logement{
+    display: flex;
+    justify-content: flex-start;
+}
+h3{
+    color: #FF6060;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.container-title-h2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -32px;   
+}
+.container-descrip-equipenemt{
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px; 
+    margin-bottom: 50px;
+}
+.cont-description,.cont-equipement{
+    width: 44%;
+    height: auto;
+    border-radius: 0px 0px 10px 10px;
+    padding-top:20px;
+    background-color: #F7F7F7;
+    margin-bottom: 50px;
+}
+p{
+    color:#FF6060;
+    list-style: none;
+    line-height: 1.5;
+    margin: 20px;
+}
+.title-h2{
+    width: 100%;
+    border-radius:10px ;
+    background-color: #FF6060;
+    padding:20px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+.drop-botton{
+    background: none;
+	outline: none;
+	border: none;
+	font-weight: 600;
+	cursor: pointer;
+	align-self: self-start;
+	padding: 0;
+	color: white;
+    position: relative;
+   left: 370px;    
+}
+.tag-conatiner{
+    display: flex;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+.tag-conatiner > li{
+    background: #FF6060;
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 10px;
+    height: 25px;
+    width: 115px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    list-style: none;
+    line-height: 1.5;
+    margin: 0px 0px 0px 20px ;
+}
+.tag-conatiner > li:first-child{
+    margin-left: 0px;
+}
+.img-host{
+    border-radius: 50%;
+}
+.container-host{
+    display: flex;
+    float: right;
+    align-items: flex-end;
+    margin-top: -155px;
+    margin-right: 0px;
+    flex-direction: column;
+}
+li.equipement{
+    color: #FF6060;
+    list-style-type: none;  
+}
+.host-name{
+    padding-top: 50px;
+    color: #FF6060;
+    width: 30px;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 20px;
+    text-align: end;
+    text-align: end;
+    position: relative;
+    right: 180px;
+    top: 80px;
+}
+.rating{
+    margin-top: 25px;
+    margin-bottom: 30px;
+    float: right;    
+    display: flex;
+    justify-content: flex-start;
+}
+.rating > img{
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 1200px){
+    .container-img > img{
+        height: 160px;   
+        border-radius: 10px;
+    }
+    .img-chevron-right,.img-chevron-left{
+        width: 20px;
+    }
+    .chevron-left, .chevron-right{
+       top: 150px; 
+    }
+    .container_chevron{
+        padding-bottom: 60px;
+      
+    }
+    .cont-titre-logement{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .titre-logement{
+        font-size: 18px;
+        margin: 10px;
+    }
+    .container-info{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .tag-conatiner{
+        margin-left: 0px;
+    }
+    .tag-conatiner > li{
+       justify-content: space-around;
+       display: flex;
+       font-size: 10px;
+       line-height: 2.5;
+    }
+    .tag-conatiner > li{      
+        margin-bottom: 0px;
+    }
+    .container-descrip-equipenemt{
+        flex-direction: column;
+    }
+    
+    .cont-description,.cont-equipement{
+        width: 100%;
+        height: auto;
+        padding-bottom: 30px;
+        border-radius: 0px 0px 10px 10px;
+        padding-top:20px;
+        background-color: white;
+        margin-bottom: 0px;
+    }
+    .drop-botton{
+        left: 0px;  
+        position: unset;
+    }
+    .title-h2{
+        display: flex;
+        justify-content: space-between;
+    }
+    .img-chevron{
+        width: 20px;
+        position: unset;
+        left: 0px;         
+    }
+    .cont-host-img{
+        position: unset;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 10px;
+        grid-auto-rows: minmax(10px, auto);
+        margin-top: -40px;        
+    }
+    .img-host{
+        grid-column: 8/ 8;
+        grid-row: 1;
+        border-radius: 50%;
+        width: 32px;
+        Height:32px;
+    }
+    .cont-host-name{
+        margin-right: 35px;
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+        grid-gap: 0px;
+        grid-auto-rows: minmax(10px, auto);
+    }
+    .host-name{
+       margin-top: 30px;
+       text-align: right;
+       width: 80px;
+       font-size: 14px;   
+       grid-column: 3/ 3;
+       grid-row: 1;
+       margin-left: 20px;
+       position: unset;
+       right: 0px;
+       top: 0px;
+    }
+    .rating{
+        margin-top: 0px; 
+    }
+    .rating > img{
+        position: relative;
+        padding-left: 10px;
+        height: 15px;
+        width: 15px;
+        bottom:15px;
+    }
+    .conatiner-loc-tags{
+        padding: 10px;
+    }
+    .title-h2 {
+        padding: 10px;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }  
+    .container-logement {
+        width: 90%;
+    }
+    p{
+        margin: 5px
+    }
+    .container-host{
+        align-items: unset;
+        margin-top: -35px;
+    }
+}
+
+

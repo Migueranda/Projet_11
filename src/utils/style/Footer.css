@@ -1,0 +1,36 @@
+body{
+    min-height: 100vh;
+    min-width: 320px;
+}
+.cont-footer{
+   display: flex;
+    margin: auto;
+    height: 209px;
+    background-color: black;
+    width: 70%;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.text-footer{
+    color: white;
+    margin-top: 30px;
+    font-size: 24px;
+}
+.img-logo{
+    width: 122px;
+    height: 39px;
+}
+.container-logo{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    padding-top: 50px;
+}
+@media screen and (max-width: 480px){
+    .cont-footer{
+        width: 100%;
+        margin-top: 80px;
+    }
+}
