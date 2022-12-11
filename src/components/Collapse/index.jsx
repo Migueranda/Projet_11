@@ -1,13 +1,11 @@
 import '../../utils/style/CardDetail.css'
 import  chevronUp from '../../assets/chevron_up.png'
 import  chevronDown from '../../assets/chevron_down.png'
-// import {logementList} from '../../datas/logements'
 import { useState } from 'react'
-// import { useParams } from 'react-router-dom'
 
 function Collapse({description, contenu, affichage}){
     // toggle description & equipement
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
 
     let  sContainerTitre = ''
     let titreDescrip = ''
@@ -15,7 +13,6 @@ function Collapse({description, contenu, affichage}){
     let containerDescription = ''
     let containerSuport = ''
     let TextContenu= ''
-
 
     switch(affichage) {
         case 'references'://id
@@ -36,11 +33,10 @@ function Collapse({description, contenu, affichage}){
             break;
         default:
             console.log('err: détermination affichage composant Collapse')
-    }
-   
+    }   
 return(
     <div className={containerSuport}>
-        {/*Description */}
+        {/*Affichage du colapse*/}
         { isOpen ? ( 
             <div className={containerDescription}>
                 <div className={sContainerTitre}>
@@ -65,6 +61,5 @@ return(
                 
     </div>
     )
-
 }
 export default Collapse

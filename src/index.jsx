@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
                 </Route>
                 <Route path="/cardDetail/:cardId/:imgIdx/" >
                     <CardDetail />
-                </Route>
+                </Route>  
                 <Route>
                   <Error /> 
                 </Route>

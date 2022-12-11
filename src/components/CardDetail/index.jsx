@@ -1,24 +1,20 @@
-import { useParams } from 'react-router-dom'
-import {logementList} from '../../datas/logements'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
+import { logementList } from '../../datas/logements'
 import '../../utils/style/CardDetail.css'
-import  chevronLeft from '../../assets/chevron_left.png'
-import  chevronRight from '../../assets/chevron_right.png'
-import  fullStar from '../../assets/full_star.png'
-import  emptyStar from '../../assets/empty_star.png'
+// import  chevronLeft from '../../assets/chevron_left.png'
+// import  chevronRight from '../../assets/chevron_right.png'
+import fullStar from '../../assets/full_star.png'
+import emptyStar from '../../assets/empty_star.png'
+import Gallery from '../Gallery'
 import Collapse from '../Collapse'
-// import Collapse from '../Collapse';
 
 function CardDetail({description}){
         
-    const {cardId, imgIdx} = useParams()
-    let imgIdxInt = parseInt(imgIdx)
+    const {cardId} = useParams()
     let logementFiltered = []
     let logement = {}
-    let prevImgIdx;
-    let nextImgIdx;
-    let rating = [1, 2, 3, 4, 5];
     let equipementList = ''
+    let rating = [1, 2, 3, 4, 5];
 
 
     // filtre en fonction de l'id du logement
@@ -29,10 +25,6 @@ function CardDetail({description}){
     // vérification si logement éxiste
     if(logementFiltered.length === 1){
         logement = logementFiltered[0]
-        // détermination des index prev & next des images pour chaque logement
-        prevImgIdx = imgIdxInt === 0 ? 0 : imgIdxInt - 1
-        nextImgIdx = imgIdxInt === logement.pictures.length - 1 ? imgIdxInt : imgIdxInt + 1
-        // construction contenu equipements
         equipementList =  <div className="equipement">  
                         <ul>
                             {logement.equipments.map((equipment) =>(
@@ -40,49 +32,15 @@ function CardDetail({description}){
                             ))}                                
                         </ul>             
                     </div> 
-
-        // equipementList = `<ul>${equipementList}</ul>`;
-        
     }else{ // sinon
         logement = false
     }
 
     return logement ? (
-        <div className="container-logement">          
-            <div className="container-img-slide">            
-                <div className='container_chevron'>
-                    {/*condition pour gérer l'affichage des chevrons en fonction de la quantité des images */}
-                    {imgIdxInt === 0 ? (
-                        <Link className='chevron-left' to={`/cardDetail/${cardId}/${prevImgIdx}/`} style={{'visibility':' hidden'}} >                           
-                            <img src={chevronLeft} alt="img chevron left " className='img-chevron-left' />                           
-                        </Link>
-                    ):(   
-                        <Link className='chevron-left' to={`/cardDetail/${cardId}/${prevImgIdx}/`} >                           
-                            <img src={chevronLeft} alt="img chevron left " className='img-chevron-left' />                           
-                        </Link>
-                    )}
-                    { imgIdxInt + 1 === logement.pictures.length ?(
+        <div className="container-logement">   
+            {/* slider */}
+            <Gallery logement={logement} />
 
-                        <Link className='chevron-right' to={`/cardDetail/${cardId}/${nextImgIdx}/`} style={{'visibility':' hidden'}}>
-                            <img src={chevronRight} alt="img chevron right " className='img-chevron-right'/> 
-                        </Link>
-                    ):(
-                        <Link className='chevron-right' to={`/cardDetail/${cardId}/${nextImgIdx}/`}>
-                        <img src={chevronRight} alt="img chevron right " className='img-chevron-right'/> 
-                        </Link>
-                    )}
-                </div>
-
-                {/*Affichage des images  */}
-                <div className='container-img'>
-                    <img src={logement.pictures[imgIdxInt]} alt="img amazon" />
-                </div>
-
-                {/* affichage du numero de pages */}
-                <div className='limite-img'>
-                    <div className='count'>{imgIdxInt + 1}/{logement.pictures.length}</div>
-                </div>                           
-            </div>
             {/* titre de logement */}
             <div className='cont-titre-logement'>
                 <h1 className='titre-logement'>{logement.title}</h1> 
@@ -118,8 +76,8 @@ function CardDetail({description}){
             </div>   
             
             <div className='container-descrip-equipenemt'>           
-                < Collapse description='Description' contenu={logement.description} affichage='cardDetail'/>                
-                < Collapse description='Equipement' contenu={equipementList} affichage='cardDetail'/>
+                <Collapse description='Description' contenu={logement.description} affichage='cardDetail'/>                
+                <Collapse description='Equipement' contenu={equipementList} affichage='cardDetail'/>
             </div>  
         </div>
     ) : ( 
