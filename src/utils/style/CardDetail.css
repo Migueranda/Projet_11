@@ -1,4 +1,7 @@
-
+.cont-support-det{
+    width: 45%;
+    height: auto;    
+}
 :root{
     width: 100%;
     margin: 0px;
@@ -74,7 +77,7 @@ h3{
     font-size: 18px;
     margin-bottom: 25px;
 }
-.container-title-h2{
+.container-title-h2-det{
     display: flex;
     justify-content: space-between;
     margin-top: -32px;   
@@ -87,21 +90,20 @@ h3{
     margin-top: 0px; 
     margin-bottom: 50px;
 }
-.cont-description,.cont-equipement{
-    width: 44%;
-    height: auto;
+.cont-description-det {
+    height: 250px;
     border-radius: 0px 0px 10px 10px;
     padding-top:20px;
     background-color: #F7F7F7;
     margin-bottom: 50px;
 }
-p{
+.text-contenu-det{
     color:#FF6060;
     list-style: none;
     line-height: 1.5;
     margin: 20px;
 }
-.title-h2{
+.title-h2-det{
     width: 100%;
     border-radius:10px ;
     background-color: #FF6060;
@@ -112,7 +114,7 @@ p{
     font-weight: 500;
     font-size: 18px;
 }
-.drop-botton{
+.drop-botton-det{
     background: none;
 	outline: none;
 	border: none;
@@ -229,9 +231,11 @@ li.equipement{
     .container-descrip-equipenemt{
         flex-direction: column;
     }
-    
-    .cont-description,.cont-equipement{
-        width: 100%;
+    .cont-support-det{
+        width: unset;
+        height: auto;
+    }    
+    .cont-description-det{
         height: auto;
         padding-bottom: 30px;
         border-radius: 0px 0px 10px 10px;
@@ -239,18 +243,26 @@ li.equipement{
         background-color: white;
         margin-bottom: 0px;
     }
-    .drop-botton{
+    .drop-botton-det{
         left: 0px;  
         position: unset;
     }
-    .title-h2{
+    .title-h2-det{
         display: flex;
         justify-content: space-between;
+        padding: 10px;
+    }
+    .text-contenu-det{
+        margin: 20px;
+        text-align: left;
+        padding: 0px;
+
+    }
+    ul{
+        padding: 0px!important;
     }
     .img-chevron{
-        width: 20px;
-        position: unset;
-        left: 0px;         
+        width: 25px;
     }
     .cont-host-img{
         position: unset;

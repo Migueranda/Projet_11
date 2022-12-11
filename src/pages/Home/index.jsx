@@ -11,7 +11,7 @@ function Home(){
                 <img src={imgHeader} alt="img d'entête" className='picHeader' />
             </div>
             <div className='container-card-item'>            
-                <Cards cardItems={logementList}/>
+                <Cards cardItems={logementList} />
             </div>        
         </div>
     )

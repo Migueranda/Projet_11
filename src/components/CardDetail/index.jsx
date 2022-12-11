@@ -1,16 +1,15 @@
 import { useParams } from 'react-router-dom'
 import {logementList} from '../../datas/logements'
 import { Link, Redirect } from 'react-router-dom'
-import { useState } from 'react'
 import '../../utils/style/CardDetail.css'
-import  chevronUp from '../../assets/chevron_up.png'
-import  chevronDown from '../../assets/chevron_down.png'
 import  chevronLeft from '../../assets/chevron_left.png'
 import  chevronRight from '../../assets/chevron_right.png'
 import  fullStar from '../../assets/full_star.png'
 import  emptyStar from '../../assets/empty_star.png'
+import Collapse from '../Collapse'
+// import Collapse from '../Collapse';
 
-function CardDetail(){
+function CardDetail({description}){
         
     const {cardId, imgIdx} = useParams()
     let imgIdxInt = parseInt(imgIdx)
@@ -18,11 +17,9 @@ function CardDetail(){
     let logement = {}
     let prevImgIdx;
     let nextImgIdx;
-    let rating = [1, 2, 3, 4, 5]
-    
-    // toggle description & equipement
-    const [isOpen, setIsOpen] = useState(true)
-    const [isOpenEquipement, setIsOpenEquipement] = useState(true)
+    let rating = [1, 2, 3, 4, 5];
+    let equipementList = ''
+
 
     // filtre en fonction de l'id du logement
     logementFiltered = logementList.filter(function(logement){
@@ -35,6 +32,17 @@ function CardDetail(){
         // détermination des index prev & next des images pour chaque logement
         prevImgIdx = imgIdxInt === 0 ? 0 : imgIdxInt - 1
         nextImgIdx = imgIdxInt === logement.pictures.length - 1 ? imgIdxInt : imgIdxInt + 1
+        // construction contenu equipements
+        equipementList =  <div className="equipement">  
+                        <ul>
+                            {logement.equipments.map((equipment) =>(
+                                <li className='equipement'>{equipment}</li>  
+                            ))}                                
+                        </ul>             
+                    </div> 
+
+        // equipementList = `<ul>${equipementList}</ul>`;
+        
     }else{ // sinon
         logement = false
     }
@@ -107,66 +115,12 @@ function CardDetail(){
                         ))}                
                     </ul> 
                 </div>   
-            </div>    
+            </div>   
             
-            {/* afichage des drop description et equipement */}
-            <div className='container-descrip-equipenemt'>
-                {/*Description */}
-                { isOpen ? ( 
-                    <div className='cont-description'>
-                        <div className='container-title-h2'>
-                            <h2 className="title-h2">Description <button className='drop-botton' onClick={() => setIsOpen(false)}>                
-                            <img src={chevronUp } alt="img chevron"  className='img-chevron'/></button>              
-                            </h2>                   
-                        </div>
-
-                        <div className="description">                   
-                            <p>{logement.description}</p> 
-                        </div>
-                    </div>         
-                ) : (
-                    <div className='cont-description' style={{background: '#FFF'}}>
-                        <div className='container-title-h2'>
-                            <h2 className="title-h2">Description <button className='drop-botton' onClick={() => setIsOpen(true)}>                
-                            <img src={chevronDown} alt="img chevron" className='img-chevron'/></button>              
-                            </h2>                   
-                        </div>
-                    </div>
-                )} 
-                {/* Equipement */}
-                {isOpenEquipement ?( 
-                    <div className='cont-equipement'>                    
-                        <div className='container-title-h2'>
-                            <h2 className="title-h2">
-                                Equipement
-                                <button className='drop-botton' onClick={() => setIsOpenEquipement(false)}>                
-                                    <img src={chevronUp } alt="img chevron" className='img-chevron'/>
-                                </button>
-                            </h2>
-                        </div>
-                        
-                        <div className="equipement">  
-                            <ul>
-                                {logement.equipments.map((equipment) =>(
-                                    <li className='equipement'>{equipment}</li>  
-                                ))}                                
-                            </ul>             
-                        </div> 
-                    </div>   
-                ) : (    
-                    <div className='cont-equipement' style={{background: '#FFF'}}>               
-                        <div className='container-title-h2'>
-                            <h2 className="title-h2">
-                                Equipement
-                                <button className='drop-botton' onClick={() => setIsOpenEquipement(true)}>                
-                                    <img src={chevronDown } alt="img chevron" className='img-chevron'/>
-                                </button>
-                            </h2>
-                        </div>
-                    </div> 
-                )}   
-        
-            </div>
+            <div className='container-descrip-equipenemt'>           
+                < Collapse description='Description' contenu={logement.description} affichage='cardDetail'/>                
+                < Collapse description='Equipement' contenu={equipementList} affichage='cardDetail'/>
+            </div>  
         </div>
     ) : ( 
         // génération de la page 404

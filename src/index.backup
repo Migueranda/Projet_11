@@ -15,3 +15,67 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
+
+
+   {/* afichage des drop description et equipement */}
+
+{/*             
+            <div className='container-descrip-equipenemt'> */}
+                {/*Description */}
+                {/* { isOpen ? ( 
+                    <div className='cont-description'>
+                        <div className='container-title-h2'>
+                            <h2 className="title-h2">Description <button className='drop-botton' onClick={() => setIsOpen(false)}>                
+                            <img src={chevronUp } alt="img chevron"  className='img-chevron'/></button>              
+                            </h2>                   
+                        </div>
+
+                        <div className="description">                   
+                            <p>{logement.description}</p> 
+                        </div>
+                    </div>         
+                ) : (
+                    <div className='cont-description' style={{background: '#FFF'}}>
+                        <div className='container-title-h2'>
+                            <h2 className="title-h2">Description <button className='drop-botton' onClick={() => setIsOpen(true)}>                
+                            <img src={chevronDown} alt="img chevron" className='img-chevron'/></button>              
+                            </h2>                   
+                        </div>
+                    </div>
+                )}  */}
+
+                {/* Equipement */}
+                
+                {/* {isOpenEquipement ?( 
+                    <div className='cont-equipement'>                    
+                        <div className='container-title-h2'>
+                            <h2 className="title-h2">
+                                Equipement
+                                <button className='drop-botton' onClick={() => setIsOpenEquipement(false)}>                
+                                    <img src={chevronUp } alt="img chevron" className='img-chevron'/>
+                                </button>
+                            </h2>
+                        </div>
+                        
+                        <div className="equipement">  
+                            <ul>
+                                {logement.equipments.map((equipment) =>(
+                                    <li className='equipement'>{equipment}</li>  
+                                ))}                                
+                            </ul>             
+                        </div> 
+                    </div>   
+                ) : (    
+                     <div className='cont-equipement' style={{background: '#FFF'}}>               
+                        <div className='container-title-h2'>
+                            <h2 className="title-h2">
+                                Equipement
+                                <button className='drop-botton' onClick={() => setIsOpenEquipement(true)}>                
+                                    <img src={chevronDown } alt="img chevron" className='img-chevron'/>
+                                </button>
+                            </h2>
+                        </div>
+                    </div> 
+                )}                  */}
+        
+            {/* </div> */}
