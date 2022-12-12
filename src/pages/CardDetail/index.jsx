@@ -1,12 +1,10 @@
 import { Redirect, useParams } from 'react-router-dom'
 import { logementList } from '../../datas/logements'
 import '../../utils/style/CardDetail.css'
-// import  chevronLeft from '../../assets/chevron_left.png'
-// import  chevronRight from '../../assets/chevron_right.png'
 import fullStar from '../../assets/full_star.png'
 import emptyStar from '../../assets/empty_star.png'
-import Gallery from '../Gallery'
-import Collapse from '../Collapse'
+import Gallery from '../../components/Gallery'
+import Collapse from '../../components/Collapse'
 
 function CardDetail({description}){
         
@@ -27,8 +25,9 @@ function CardDetail({description}){
         logement = logementFiltered[0]
         equipementList =  <div className="equipement">  
                         <ul>
-                            {logement.equipments.map((equipment) =>(
-                                <li className='equipement'>{equipment}</li>  
+                            {logement.equipments.map((equipment,index) =>(
+                                <li key={`${equipment}-${index}`} className='equipement'>{equipment}</li>  
+                                // 
                             ))}                                
                         </ul>             
                     </div> 
@@ -57,19 +56,19 @@ function CardDetail({description}){
                     </div>
                     {/*  affichage des icons pour le raiting*/}
                     <div className='rating'>
-                        {rating.map((ratingElem) =>
-                            logement.rating >= ratingElem ? <img src={fullStar}  alt=" full star rating" /> 
-                            : <img src={emptyStar} alt="Empty start rating"/>
+                        {rating.map((ratingElem, index) =>
+                            logement.rating >= ratingElem ? <img src={fullStar} key={`${ratingElem}-${index}`} alt=" full star rating" /> 
+                            : <img src={emptyStar} key={`${ratingElem}-${index}`} alt="Empty start rating"/>
                         )}
                     </div>
                 </div> 
                 {/*tags et location */}
                 <div className='conatiner-loc-tags'>
                     <h3>{logement.location}</h3> 
-
+                            
                     <ul className='tag-conatiner'>
-                        {logement.tags.map((tag) => (
-                            <li>{tag}</li>
+                        {logement.tags.map((tag, index) => (
+                            <li key={`${tag}-${index}`}>{tag}</li>                                                 
                         ))}                
                     </ul> 
                 </div>   

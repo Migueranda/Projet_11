@@ -9,7 +9,6 @@ let StyledLink = styled(Link)`
     color: #FF6060;    
     font-size: 18px;
 `
-
 function Header(){
 
     const [clikedItemAc, setBorderBottomItemAc] = useState(true)   
@@ -23,13 +22,13 @@ function Header(){
                     <StyledLink className='link-item' to="/" onClick={() => setBorderBottomItemAc(true)}>
                         Accueil
                     </StyledLink>
-                    <StyledLink className='link-item' to="/references" onClick={() => setBorderBottomItemAc(false)}style={{'text-decoration': 'none'}}>
+                    <StyledLink className='link-item' to="/references" onClick={() => setBorderBottomItemAc(false)}style={{'textDecoration': 'none'}}>
                         A Propos
                     </StyledLink>
                 </div> 
            ) : (
             <div className='container-items'>             
-                <StyledLink className='link-item' to="/" onClick={() => setBorderBottomItemAc(true)} style={{'text-decoration': 'none'}}>
+                <StyledLink className='link-item' to="/" onClick={() => setBorderBottomItemAc(true)} style={{'textDecoration': 'none'}}>
                     Accueil
                 </StyledLink>
                 <StyledLink className='link-item' to="/references" onClick={() => setBorderBottomItemAc(false)}>

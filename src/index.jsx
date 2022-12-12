@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import References from './pages/References';
-import CardDetail from './components/CardDetail';
-// import Collapse from './components/Collapse';
-import Error from './components/Error';
-import { createGlobalStyle } from 'styled-components'
+import CardDetail from './pages/CardDetail';
+import Error from './pages/Error';
+import { createGlobalStyle } from 'styled-components';
+
 
 
 // style ajouté sur l'emsemble des pages
@@ -43,4 +44,3 @@ const GlobalStyle = createGlobalStyle`
     document.getElementById('root')
   )
 
-  

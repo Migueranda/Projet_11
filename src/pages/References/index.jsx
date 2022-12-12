@@ -1,6 +1,6 @@
 import '../../utils/style/References.css'   
 import  imgApropos from '../../assets/img_apropos.png'
-import  Footer from '../Footer'
+import  Footer from '../../components/Footer'
 import Collapse from '../../components/Collapse'
 
 function References(){
@@ -15,11 +15,10 @@ function References(){
             <div id='container-img'>
                 <img src={imgApropos} alt="img entête" className='img-apropos'/>                
             </div>
-               <div className='container-drop'> 
-               
-                    <Collapse description='Respect' contenu={contenuFiabilite} affichage='references'/>       
+                <div className='container-drop'> 
+                    <Collapse description='Fiabilité' contenu={contenuFiabilite} affichage='references'/>       
                     <Collapse description='Respect' contenu={contenuRespect} affichage='references' /> 
-                    <Collapse description='Sevice' contenu={contenuSevice} affichage='references'/>       
+                    <Collapse description='Service' contenu={contenuSevice} affichage='references'/>       
                     <Collapse description='Responsablité' contenu={contenusecurite} affichage='references'/> 
                 </div>                     
             <Footer />

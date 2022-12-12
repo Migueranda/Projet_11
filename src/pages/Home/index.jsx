@@ -1,5 +1,5 @@
 import {logementList} from '../../datas/logements'
-import Cards from '../../components/Cards'
+import Cards from '../Cards'
 import imgHeader from '../../assets/img_header.png'
 import '../../utils/style/Home.css'
 
